@@ -98,3 +98,36 @@
     print(cnt)
     
 <br>
+<br>
+
+> **4. 럭키 스트레이트**
+
+- 현재 캐릭터의 점수를 n이라고 할 때 자릿수를 기준으로 반을 나누어 왼쪽의 각 자릿수의 합과<br>
+  오른쪽의 각 자릿수의 합을 더한 값이 동일할 경우 'LUCKY'를 출력 
+- 그렇지 않은 경우에는 'READY'를 출력함
+
+>
+    n = int(input())
+    n = str(n)
+    
+    if sum([int(i) for i in n[:len(n)//2]]) == sum([int(i) for i in n[len(n)//2:]]):
+        print('LUCKY')
+    else:
+        print('READY')
+
+<br>
+<br>
+
+> **5. 문자열 재정렬**
+
+- 알파벳 대문자와 숫자(0 ~ 9)로만 구성된 문자열이 입력으로 주어질 때 알파벳을 오름차순으로 정렬 후 모든 숫자들을 더한 값을 출력하시오
+
+>
+    import string
+
+    s = input()
+    alpha = string.ascii_uppercase
+    result = sorted([i for i in s if i in alpha]) + [str(sum([int(i) for i in s if i not in alpha]))]
+    
+    print(''.join(result))
+
